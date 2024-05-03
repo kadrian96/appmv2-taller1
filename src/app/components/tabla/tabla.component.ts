@@ -13,9 +13,9 @@ export class TablaComponent {
   valorMaximo:any
   valorMinimo:any
   volverFiltrar=true;
-  categoria=null
+  categoria=''
   valorId:any
-  juegoId:any
+  juegoId:any=''
   juegos=[{
     id:"juego1",
     nombre:"Crash Bandicot",
@@ -97,8 +97,11 @@ export class TablaComponent {
   }
   mostrar(){
     
-  this.valorMaximo=''
-  this.valorMinimo=''
+  this.valorMaximo=undefined
+  this.valorMinimo=undefined
+  this.categoria=''
+  this.juegoId=''
+  this.valorId=''
   
   
   }

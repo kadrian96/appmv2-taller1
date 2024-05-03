@@ -21,7 +21,7 @@
     <h5>Busqueda por id</h5>
     <input type="text" class="form-control" name="valorId" [(ngModel)]="valorId">
     <button (click)="AsignarId()" class="btn btn-success">Buscar</button><br><br>
-             
+    <button (click)="mostrar()" class="btn btn-warning">Mostrar todo</button><br><br>         
     <table class="table">
       <thead>
         <tr>
@@ -53,6 +53,16 @@
                         
                         <button class="btn btn-primary" [routerLink]="['/detalles-juegos',item.id]">Detalles</button>
                     </td>
+                }@else if (valorMaximo==undefined && valorMinimo==undefined && categoria=='' && juegoId=='') {
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.categoria}}</td>
+                    <td>{{item.precio}}</td>
+                    <td>
+                        
+                        <button class="btn btn-primary" [routerLink]="['/detalles-juegos',item.id]">Detalles</button>
+                    </td>
+
                 }
                 
                 
