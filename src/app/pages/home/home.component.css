@@ -1,0 +1,43 @@
+.destacados {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.destacados h2 {
+    margin-bottom: 20px;
+    color: rgb(59, 147, 150);
+}
+
+.producto {
+    margin-bottom: 40px;
+}
+
+.producto img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.producto h3 {
+    margin-top: 10px;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.logo img {
+    width: 200px; /* Ajusta el tamaño según el tamaño de tu logo */
+}
+
+.slogan h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.slogan p {
+    font-size: 18px;
+    color: #666;
+}

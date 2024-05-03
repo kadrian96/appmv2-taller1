@@ -1,0 +1,12 @@
+
+<div class="container mt-3">
+    <h2>Videojuego</h2>
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src={{item.img}} alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">{{item.nombre}}</h4>
+        <p class="card-text">Precio: {{item.precio}}</p>
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-success" [routerLink]="['/productos']">Regresar</button>

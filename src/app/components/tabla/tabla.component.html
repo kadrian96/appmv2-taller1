@@ -1,0 +1,66 @@
+<div class="container mt-3">
+    <h2 style="text-align: center;">VideoJuegos</h2>
+    <h5>Filtrar por rango</h5>
+    <label>Valor Minimo:</label>
+    <input type="number" class="form-control" name="valorMinimo" [(ngModel)]="valorMinimo">
+    <label>Valor Maximo:</label>
+    <input type="number" class="form-control" name="valorMaximo" [(ngModel)]="valorMaximo"><br>
+    <h5>Filtrar por categoria</h5>
+    <label for="genero">Selecciona una categoria  videojuego:</label>
+    <select id="genero" name="genero" [(ngModel)]="categoria">
+        <option value=""></option>
+        <option value="aventura">Aventura</option>
+        <option value="accion">Acción</option>
+        <option value="deportes">Deportes</option>
+        <option value="batalla">Batalla</option>
+        <option value="drama">Drama</option>
+        <option value="peleas">Peleas</option>
+        <option value="superheroes">Superhéroes</option>
+    </select><br>
+    <br>
+    <h5>Busqueda por id</h5>
+    <input type="text" class="form-control" name="valorId" [(ngModel)]="valorId">
+    <button (click)="AsignarId()" class="btn btn-success">Buscar</button><br><br>
+             
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Producto</th>
+          <th>Categoria</th>
+          <th>Precio</th>
+          <th>Detalles</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of juegos; track item){
+            <tr>
+                @if ((item.precio < valorMaximo && item.precio > valorMinimo && esNumero()) || item.id==juegoId) {
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.categoria}}</td>
+                    <td>{{item.precio}}</td>
+                    <td>
+                        
+                        <button class="btn btn-primary" [routerLink]="['/detalles-juegos',item.id]">Detalles</button>
+                    </td>
+                }@else if(item.categoria==categoria || item.id==juegoId){
+                    <td>{{item.id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.categoria}}</td>
+                    <td>{{item.precio}}</td>
+                    <td>
+                        
+                        <button class="btn btn-primary" [routerLink]="['/detalles-juegos',item.id]">Detalles</button>
+                    </td>
+                }
+                
+                
+              </tr>
+        }
+        
+        
+      </tbody>
+    </table>
+  </div>>
+
